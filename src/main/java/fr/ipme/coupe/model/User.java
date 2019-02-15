@@ -13,23 +13,17 @@ public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty("id")
     private long id;
 
-    @JsonProperty("name")
     private String name;
 
-    @JsonProperty("age")
     private int age;
 
-    @JsonProperty("email")
     private String email;
 
-    @JsonProperty("password")
     private String password;
 
-    public User() {
-    }
+    public User() {}
 
     public void setId(long id) {
         this.id = id;
@@ -43,9 +37,7 @@ public class User{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name;}
 
     public int getAge() {
         return age;

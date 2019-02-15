@@ -2,23 +2,29 @@ package fr.ipme.coupe.model;
 
 import javax.persistence.*;
 
-@Entity
 @Table
-public class Country {
+@Entity
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     /**
-     * Country full name
+     * Name of player
      */
     private String name;
 
+    /**
+     * Team of player
+     */
+    @ManyToOne
+    private Team team;
 
     /**
-     * Short name for display (ex : FRA - BRA)
+     * Stats of player
+     * 0 => ATK
+     * 1 => DEF
      */
-    private String shortName;
-
+    private int[] stats;
 }

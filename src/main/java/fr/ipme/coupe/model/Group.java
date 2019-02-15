@@ -10,6 +10,9 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    /**
+     * Name of group, Probably A, B, C ...
+     */
     private String name;
 
 

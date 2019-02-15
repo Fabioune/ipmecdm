@@ -10,14 +10,15 @@ public class Team {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
-
-    private String shortName;
-
+    /**
+     * Country linked to team
+     */
     @ManyToOne
     private Country country;
 
-
+    /**
+     * Current group of team
+     */
     @ManyToOne
     private Group group;
 

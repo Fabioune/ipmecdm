@@ -21,6 +21,9 @@ public class MatchController {
     public void create() {}
     public void delete() {}
 
+    /**
+     * nPoint to launch a game
+     */
     @GetMapping(value="/play")
     public void play()
     {
