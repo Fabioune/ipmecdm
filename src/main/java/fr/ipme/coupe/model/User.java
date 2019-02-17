@@ -19,9 +19,19 @@ public class User{
 
     private int age;
 
+    public int getAccountLevel() {
+        return accountLevel;
+    }
+
+    public void setAccountLevel(int accountLevel) {
+        this.accountLevel = accountLevel;
+    }
+
     private String email;
 
     private String password;
+
+    private int accountLevel;
 
     public User() {}
 

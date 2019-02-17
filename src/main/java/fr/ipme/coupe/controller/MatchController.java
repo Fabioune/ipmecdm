@@ -1,19 +1,25 @@
 package fr.ipme.coupe.controller;
 
+import fr.ipme.coupe.model.Group;
 import fr.ipme.coupe.model.Match;
+import fr.ipme.coupe.repository.CountryRepository;
+import fr.ipme.coupe.repository.GroupRepository;
 import fr.ipme.coupe.repository.MatchRepository;
+import fr.ipme.coupe.repository.TeamRepository;
 import fr.ipme.coupe.service.MatchService;
+import fr.ipme.coupe.service.RandomGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RequestMapping("/api/matchs")
 @RestController
 public class MatchController {
 
-    @Autowired
-    MatchRepository matchRepository;
+
 
     public void list() {}
     public void get() {}
@@ -21,15 +27,6 @@ public class MatchController {
     public void create() {}
     public void delete() {}
 
-    /**
-     * nPoint to launch a game
-     */
-    @GetMapping(value="/play")
-    public void play()
-    {
-        Match match = new Match();
-        MatchService matchService = new MatchService();
-        matchService.play(match);
-    }
+
 }
 

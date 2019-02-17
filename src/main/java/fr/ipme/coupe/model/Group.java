@@ -3,7 +3,7 @@ package fr.ipme.coupe.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="`group`")
+@Table(name="`groups`")
 public class Group {
 
     @Id
@@ -13,7 +13,13 @@ public class Group {
     /**
      * Name of group, Probably A, B, C ...
      */
-    private String name;
+    private char name;
 
-
+    @Override
+    public String toString() {
+        return "Group{" +
+                "id=" + id +
+                ", name=" + name +
+                '}';
+    }
 }
