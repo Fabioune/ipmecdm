@@ -8,17 +8,19 @@ public abstract class AbstractUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    protected long id;
 
     protected String name;
 
-    private int age;
+    protected int age;
 
-    private String email;
+    protected String email;
 
-    private String password;
+    protected String password;
 
-    private int accountLevel;
+    protected int accountLevel;
+
+    private int resultprono;
 
     public int getAccountLevel() {
         return accountLevel;
@@ -66,8 +68,9 @@ public abstract class AbstractUser {
         this.password = password;
     }
 
+    public int getResultprono(){ return resultprono; }
 
-
+    public void setResultprono(int resultprono){this.resultprono = resultprono;}
 
     @Override
     public String toString() {
