@@ -9,19 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MatchService {
+public abstract class MatchService {
 
     @Autowired
     MatchRepository matchRepository;
 
-    /**
-     * Launch a simulation of a game with a change of scoring
-     * for each team every minute depending of ATK and DEF
-     *
-     * @param match
-     */
-    public void play(Match match)
-    {
-        System.out.println("le match est lancé");
-    }
 }

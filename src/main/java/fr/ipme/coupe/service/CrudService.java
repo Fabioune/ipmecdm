@@ -1,5 +1,6 @@
-package fr.ipme.coupe.core;
+package fr.ipme.coupe.service;
 
+import fr.ipme.coupe.core.ModelInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,7 @@ public abstract class CrudService<M extends ModelInterface, T extends JpaReposit
 
         return this.getRepo().save(targetModel);
     }
+
     @DeleteMapping(value="/{id}")
     public void delete(@PathVariable long id)
     {
