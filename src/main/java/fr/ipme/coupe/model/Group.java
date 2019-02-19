@@ -15,6 +15,8 @@ public class Group {
      */
     private char name;
 
+    public Group(){}
+
     @Override
     public String toString() {
         return "Group{" +
