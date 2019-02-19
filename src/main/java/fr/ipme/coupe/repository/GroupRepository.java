@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface GroupRepository extends JpaRepository <Group, Long> {
 
-    @Query ("SELECT t FROM `team` WHERE group_id = :id ")
+    @Query ("SELECT t FROM Team t WHERE group_id = :id ")
     public List<Team> findTeamsByGroup(long id);
 
 }
