@@ -20,8 +20,6 @@ public abstract class AbstractUser {
 
     protected int accountLevel;
 
-    private int resultprono;
-
     public int getAccountLevel() {
         return accountLevel;
     }
@@ -67,10 +65,6 @@ public abstract class AbstractUser {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public int getResultprono(){ return resultprono; }
-
-    public void setResultprono(int resultprono){this.resultprono = resultprono;}
 
     @Override
     public String toString() {

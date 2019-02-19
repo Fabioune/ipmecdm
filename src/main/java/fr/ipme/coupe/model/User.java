@@ -25,6 +25,16 @@ public class User implements ModelInterface {
 
     protected int accountLevel;
 
+    protected int pronosticPoints;
+
+    public int getPronosticPoints() {
+        return pronosticPoints;
+    }
+
+    public void setPronosticPoints(int pronosticPoints) {
+        this.pronosticPoints = pronosticPoints;
+    }
+
     public int getAccountLevel() {
         return accountLevel;
     }
