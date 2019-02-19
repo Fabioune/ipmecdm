@@ -13,7 +13,6 @@ import java.util.List;
 @Service
 public class GroupService {
 
-
     @Autowired
     GroupRepository groupRepository;
 
@@ -23,8 +22,6 @@ public class GroupService {
     public void launchPool() {
 
         List<Group> groups = groupRepository.findAll();
-
-
 
         for (int i = 0; i < groups.size() ; i++) {
             List<Team> teams = groupRepository.findTeamsByGroup(groups.get(i).getId());
@@ -39,12 +36,7 @@ public class GroupService {
                     matchPouleService.play();
 
                 }
-    
-
             }
-
         }
-
-
     }
 }

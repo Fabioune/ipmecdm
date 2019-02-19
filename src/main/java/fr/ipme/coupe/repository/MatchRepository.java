@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface MatchRepository extends JpaRepository <Match, Long> {
-    @Query ("SELECT p.user FROM Pronostic p WHERE match = :match ")
+    @Query ("SELECT u FROM Pronostic p left join p.user u WHERE match_id = :match")
     public List<User> getUserWhoMadePronosticsByMatch(Match match);
 }

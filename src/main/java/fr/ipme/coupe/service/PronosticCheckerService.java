@@ -8,10 +8,12 @@ import fr.ipme.coupe.repository.MatchRepository;
 import fr.ipme.coupe.repository.PronosticRepository;
 import fr.ipme.coupe.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class PronosticCheckerService {
 
     @Autowired
@@ -29,7 +31,7 @@ public class PronosticCheckerService {
 
         for (int i = 0; i < listFiltered.size(); i++) {
             int currentPointForUser = listFiltered.get(i).getPronosticPoints();
-            listFiltered.get(i).setPronosticPoints(currentPointForUser);
+            listFiltered.get(i).setPronosticPoints(currentPointForUser + 1);
 
             // save points for user if good prediction
             userRepository.save(listFiltered.get(i));
