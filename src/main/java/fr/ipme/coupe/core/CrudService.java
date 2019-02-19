@@ -1,48 +1,53 @@
 package fr.ipme.coupe.core;
 
-import fr.ipme.coupe.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-public class CrudService<M, T extends JpaRepository> {
+@Service
+public abstract class CrudService<M extends ModelInterface, T extends JpaRepository>
+{
     private M model;
+
+    @Autowired
     private T repo;
 
     @GetMapping
     public List<M> list()
     {
-        return repo.findAll();
+        return this.getRepo().findAll();
     }
 
-    @GetMapping(value="/{id}")
-    public Object get(@PathVariable long id) {
-        return repo.getOne(id);
+    @GetMapping("/{id}")
+    public Object get(@PathVariable long id)
+    {
+        return this.getRepo().getOne(id);
     }
 
     @PostMapping
-    public Object create(@RequestBody User user)
+    public Object create(@RequestBody M body)
     {
-        return repo.save(user);
+        return this.getRepo().save(body);
     }
 
-    /**
-     * Peut avoir name=truc pour remplacer la key
-     * @param id
-     * @param targetModel
-     */
     @PutMapping(value="/{id}")
     public Object update(@PathVariable(name = "id") long id, @RequestBody M targetModel)
     {
-//        targetModel.setId(id);
+        targetModel.setId(id);
 
-        return repo.save(targetModel);
+        return this.getRepo().save(targetModel);
     }
-
     @DeleteMapping(value="/{id}")
     public void delete(@PathVariable long id)
     {
-        repo.deleteById(id);
+        this.getRepo().deleteById(id);
+    }
+
+    protected T getRepo()
+    {
+        return repo;
     }
 }

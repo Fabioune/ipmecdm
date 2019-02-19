@@ -1,14 +1,17 @@
 package fr.ipme.coupe.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
 @Table
+@JsonIgnoreProperties("hibernateLazyInitializer")
 public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     /**
      * Country linked to team
@@ -32,11 +35,11 @@ public class Team {
      */
     private int defence;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
