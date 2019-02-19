@@ -44,4 +44,15 @@ public class Country {
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
+
+    public Country(){}
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", shortName='" + shortName + '\'' +
+                '}';
+    }
 }

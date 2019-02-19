@@ -27,4 +27,8 @@ public class Player {
      * 1 => DEF
      */
     private int[] stats;
+
+
+    public Player(){}
+
 }

@@ -41,4 +41,6 @@ public class Pronostic {
      */
     @ManyToOne
     private Team bTeam;
+
+    public Pronostic(){}
 }

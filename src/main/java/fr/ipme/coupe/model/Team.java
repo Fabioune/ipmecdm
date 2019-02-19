@@ -71,4 +71,6 @@ public class Team {
     public void setDefence(int defence) {
         this.defence = defence;
     }
+
+    public Team(){}
 }

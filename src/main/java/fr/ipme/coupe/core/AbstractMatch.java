@@ -1,6 +1,7 @@
 package fr.ipme.coupe.core;
 
 
+import fr.ipme.coupe.model.Match;
 import fr.ipme.coupe.model.Team;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,13 +17,13 @@ public abstract class AbstractMatch {
 
     private int currentTime;
 
-    private int scoreTeamA;
+    private Match aScore;
 
-    private int scoreTeamB;
+    private Match bScore;
 
-    private Team teamA;
+    private Team aTeam;
 
-    private Team teamB;
+    private Team bTeam;
 
     public long getId() {
         return id;
@@ -48,48 +49,45 @@ public abstract class AbstractMatch {
         this.currentTime = currentTime;
     }
 
-    public int getScoreTeamA() {
-        return scoreTeamA;
+    public Match getaScore() {
+        return aScore;
     }
 
-    public void setScoreTeamA(int scoreTeamA) {
-        this.scoreTeamA = scoreTeamA;
+    public void setaScore(Match aScore) {
+        this.aScore = aScore;
     }
 
-    public int getScoreTeamB() {
-        return scoreTeamB;
+    public Match getbScore() {
+        return bScore;
     }
 
-    public void setScoreTeamB(int scoreTeamB) {
-        this.scoreTeamB = scoreTeamB;
+    public void setbScore(Match bScore) {
+        this.bScore = bScore;
     }
 
-    public Team getTeamA() {
-        return teamA;
+    public Team getaTeam() {
+        return aTeam;
     }
 
-    public void setTeamA(Team teamA) {
-        this.teamA = teamA;
+    public void setaTeam(Team aTeam) {
+        this.aTeam = aTeam;
     }
 
-    public Team getTeamB() {
-        return teamB;
+    public Team getbTeam() {
+        return bTeam;
     }
 
-    public void setTeamB(Team teamB) {
-        this.teamB = teamB;
+    public void setbTeam(Team bTeam) {
+        this.bTeam = bTeam;
     }
 
     @Override
     public String toString() {
         return "AbstractMatch{" +
-                "id=" + id +
-                ", time=" + time +
-                ", currentTime=" + currentTime +
-                ", scoreTeamA=" + scoreTeamA +
-                ", scoreTeamB=" + scoreTeamB +
-                ", teamA=" + teamA +
-                ", teamB=" + teamB +
+                ", aTeam=" + aTeam +
+                "aScore=" + aScore +
+                ", bTeam=" + bTeam +
+                ", bScore=" + bScore +
                 '}';
     }
 }
