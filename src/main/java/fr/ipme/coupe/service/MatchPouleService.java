@@ -1,17 +1,16 @@
 package fr.ipme.coupe.service;
 
+import fr.ipme.coupe.model.Match;
 import fr.ipme.coupe.model.Team;
 
-public class MatchPouleService extends MatchService{
+public class MatchPouleService extends MatchService {
 
-    protected Team aTeam;
-    protected Team bTeam;
+    protected Match match;
 
     public MatchPouleService() {
     }
 
-    public MatchPouleService(Team aTeam, Team bTeam) {
-        this.aTeam = aTeam;
-        this.bTeam = bTeam;
+    public MatchPouleService(Match match) {
+        this.match = match;
     }
 }
