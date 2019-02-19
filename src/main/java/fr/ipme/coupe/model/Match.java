@@ -34,4 +34,9 @@ public class Match {
      * Second Team's score
      */
     private int bScore;
+
+    public Match(){}
+
+
+
 }
