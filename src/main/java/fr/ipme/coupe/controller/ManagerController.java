@@ -68,7 +68,7 @@ public class ManagerController {
     @GetMapping("/round1")
     public void launchEliminations()
     {
-        groupService.launchPoule();
+        groupService.launchEliminations();
     }
 
 }

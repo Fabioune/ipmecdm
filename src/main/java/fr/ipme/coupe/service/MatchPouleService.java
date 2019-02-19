@@ -1,30 +1,17 @@
 package fr.ipme.coupe.service;
 
 import fr.ipme.coupe.model.Match;
-import fr.ipme.coupe.model.Pronostic;
-import fr.ipme.coupe.model.User;
-import fr.ipme.coupe.repository.PronosticRepository;
-import fr.ipme.coupe.repository.TeamRepository;
-import fr.ipme.coupe.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import fr.ipme.coupe.service.*;
-
-import java.util.List;
 
 
 @Service
 public class MatchPouleService extends MatchService {
 
-    public MatchPouleService() {}
-
-    public Match getMatch() {
-        return match;
-    }
-
     public void setMatch(Match match) {
         this.match = match;
     }
+
+    public MatchPouleService() {}
 
     public void play()
     {

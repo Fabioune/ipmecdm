@@ -35,6 +35,11 @@ public abstract class MatchService {
 
     protected Match match;
 
+
+    public void setMatch(Match match) {
+        this.match = match;
+    }
+
     /**
      * Start first set of world cut
      * For test purpose, also play all match at the same time
@@ -43,7 +48,7 @@ public abstract class MatchService {
     protected void playMatch()
     {
         // save match to allow saving pronostics
-        matchRepository.save(match);
+        matchRepository.save(this.match);
 
         // generate and save all pronostics
         List<User> betters = userRepository.findAll();
