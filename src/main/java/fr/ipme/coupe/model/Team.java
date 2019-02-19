@@ -73,4 +73,16 @@ public class Team {
     }
 
     public Team(){}
+
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id=" + id +
+                ", country=" + country +
+                ", group=" + group +
+                ", attack=" + attack +
+                ", defence=" + defence +
+                '}';
+    }
 }
