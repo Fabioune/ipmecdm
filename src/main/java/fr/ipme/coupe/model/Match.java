@@ -1,10 +1,12 @@
 package fr.ipme.coupe.model;
 
+import fr.ipme.coupe.core.ModelInterface;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="`match`")
-public class Match {
+public class Match implements ModelInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
