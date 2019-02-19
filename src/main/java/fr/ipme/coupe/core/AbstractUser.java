@@ -8,17 +8,17 @@ public abstract class AbstractUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    protected long id;
 
     protected String name;
 
-    private int age;
+    protected int age;
 
-    private String email;
+    protected String email;
 
-    private String password;
+    protected String password;
 
-    private int accountLevel;
+    protected int accountLevel;
 
     public int getAccountLevel() {
         return accountLevel;
