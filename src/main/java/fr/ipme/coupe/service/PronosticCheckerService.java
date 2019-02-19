@@ -1,6 +1,7 @@
 package fr.ipme.coupe.service;
 
 import fr.ipme.coupe.model.Match;
+import fr.ipme.coupe.model.MatchEliminatoire;
 import fr.ipme.coupe.model.Pronostic;
 import fr.ipme.coupe.model.User;
 import fr.ipme.coupe.repository.MatchRepository;
@@ -48,6 +49,24 @@ public class PronosticCheckerService {
                 if ((pronostic.get(j).getbScore() > match.getaScore() && pronostic.get(j).getaScore() > match.getbScore())
                 || (pronostic.get(j).getbScore() < match.getaScore() && pronostic.get(j).getaScore() < match.getbScore())
                 || (pronostic.get(j).getbScore() == match.getaScore() && pronostic.get(j).getaScore() == match.getbScore())) {
+                    listFiltered.add(userWithPro.get(i));
+                }
+            }
+        }
+
+        return listFiltered;
+    }
+
+    public List<User> getUserWithGoodPronosticByMatch(MatchEliminatoire match)
+    {
+        List<User> listFiltered = new ArrayList<>();
+        List<User> userWithPro = matchRepository.getUserWhoMadePronosticsByMatch(match);
+
+        for (int i = 0; i < userWithPro.size(); i++) {
+            List<Pronostic> pronostic = pronosticRepository.findByUserAndMatch(userWithPro.get(i), match);
+            for (int j = 0; j < pronostic.size(); j++) {
+                if ((pronostic.get(j).getbScore() > match.getaScore() && pronostic.get(j).getaScore() > match.getbScore())
+                || (pronostic.get(j).getbScore() < match.getaScore() && pronostic.get(j).getaScore() < match.getbScore())) {
                     listFiltered.add(userWithPro.get(i));
                 }
             }

@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="`matchEliminatoire`")
 @JsonIgnoreProperties("hibernateLazyInitializer")
-public class MatchEliminatoire {
+public class MatchEliminatoire extends Match{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
