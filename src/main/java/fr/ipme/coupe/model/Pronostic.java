@@ -15,6 +15,34 @@ public class Pronostic {
      */
     private int aScore;
 
+    /**
+     * Second Team PREDICTED score
+     */
+    private int bScore;
+
+
+    /**
+     * User who made this pronostic
+     */
+    @ManyToOne
+    private User user;
+
+
+    /**
+     * First Team
+     */
+    @ManyToOne
+    private Team aTeam;
+
+
+    /**
+     * Second Team
+     */
+    @ManyToOne
+    private Team bTeam;
+
+    public Pronostic(){}
+
     public long getId() {
         return id;
     }
@@ -62,32 +90,4 @@ public class Pronostic {
     public void setbTeam(Team bTeam) {
         this.bTeam = bTeam;
     }
-
-    /**
-     * Second Team PREDICTED score
-     */
-    private int bScore;
-
-
-    /**
-     * User who made this pronostic
-     */
-    @ManyToOne
-    private User user;
-
-
-    /**
-     * First Team
-     */
-    @ManyToOne
-    private Team aTeam;
-
-
-    /**
-     * Second Team
-     */
-    @ManyToOne
-    private Team bTeam;
-
-    public Pronostic(){}
 }

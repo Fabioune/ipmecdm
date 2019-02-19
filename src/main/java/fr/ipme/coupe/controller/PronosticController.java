@@ -10,13 +10,6 @@ import java.util.List;
 
 @RequestMapping("/api/pronostics")
 @RestController
-public class PronosticController extends CrudService<PronosticRepository> {
+public class PronosticController extends CrudService<Pronostic, PronosticRepository> {
 
-    @PutMapping(value="/{id}")
-    public Object update(@PathVariable(name = "id") long id, @RequestBody Pronostic targetModel)
-    {
-        targetModel.setId(id);
-
-        return this.getRepo().save(targetModel);
-    }
 }

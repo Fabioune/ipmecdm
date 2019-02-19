@@ -7,13 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/groups")
 @RestController
-public class GroupController extends CrudService<GroupRepository> {
+public class GroupController extends CrudService<Group, GroupRepository> {
 
-    @PutMapping(value="/{id}")
-    public Group update(@PathVariable(name = "id") long id, @RequestBody Group targetModel)
-    {
-        targetModel.setId(id);
-
-        return this.getRepo().save(targetModel);
-    }
 }

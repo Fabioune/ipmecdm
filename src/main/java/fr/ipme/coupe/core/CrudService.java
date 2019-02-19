@@ -1,18 +1,22 @@
 package fr.ipme.coupe.core;
 
-import fr.ipme.coupe.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-@Service
-public class CrudService<T extends JpaRepository> {
+import java.util.List;
 
+@Service
+public abstract class CrudService<M extends ModelInterface, T extends JpaRepository>
+{
+    private M model;
+
+    @Autowired
     private T repo;
 
     @GetMapping
-    public Object list()
+    public List<M> list()
     {
         return this.getRepo().findAll();
     }
@@ -24,15 +28,22 @@ public class CrudService<T extends JpaRepository> {
     }
 
     @PostMapping
-    public Object create(@RequestBody User user)
+    public Object create(@RequestBody M body)
     {
-        return this.getRepo().save(user);
+        return this.getRepo().save(body);
     }
 
+    @PutMapping(value="/{id}")
+    public Object update(@PathVariable(name = "id") long id, @RequestBody M targetModel)
+    {
+        targetModel.setId(id);
+
+        return this.getRepo().save(targetModel);
+    }
     @DeleteMapping(value="/{id}")
     public void delete(@PathVariable long id)
     {
-        repo.deleteById(id);
+        this.getRepo().deleteById(id);
     }
 
     protected T getRepo()

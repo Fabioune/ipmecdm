@@ -1,9 +1,12 @@
 package fr.ipme.coupe.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
 @Table
+@JsonIgnoreProperties("hibernateLazyInitializer")
 public class Team {
 
     @Id

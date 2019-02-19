@@ -7,13 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/teams")
 @RestController
-public class TeamController extends CrudService<TeamRepository> {
+public class TeamController extends CrudService<Team, TeamRepository> {
 
-    @PutMapping(value="/{id}")
-    public Team update(@PathVariable(name = "id") long id, @RequestBody Team targetModel)
-    {
-        targetModel.setId(id);
-
-        return this.getRepo().save(targetModel);
-    }
 }
