@@ -29,26 +29,14 @@ public class Pronostic implements ModelInterface {
     @ManyToOne
     private User user;
 
-
-    /**
-     * First Team
-     */
     @ManyToOne
-    private Team aTeam;
-
-
-    /**
-     * Second Team
-     */
-    @ManyToOne
-    private Team bTeam;
-
-    public Pronostic(){}
+    private Match match;
 
     public long getId() {
         return id;
     }
 
+    @Override
     public void setId(long id) {
         this.id = id;
     }
@@ -77,19 +65,11 @@ public class Pronostic implements ModelInterface {
         this.user = user;
     }
 
-    public Team getaTeam() {
-        return aTeam;
+    public Match getMatch() {
+        return match;
     }
 
-    public void setaTeam(Team aTeam) {
-        this.aTeam = aTeam;
-    }
-
-    public Team getbTeam() {
-        return bTeam;
-    }
-
-    public void setbTeam(Team bTeam) {
-        this.bTeam = bTeam;
+    public void setMatch(Match match) {
+        this.match = match;
     }
 }
