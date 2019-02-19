@@ -26,7 +26,6 @@ public class ManagerController {
     @Autowired
     private UserRepository userRepository;
 
-
     @Autowired
     private RandomGeneratorService randomGeneratorService;
 
