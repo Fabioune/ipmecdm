@@ -36,4 +36,6 @@ abstract class AbstractPronostic {
     public void setBteam(boolean bteam) {
         this.bteam = bteam;
     }
+
+
 }
