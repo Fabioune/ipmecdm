@@ -1,12 +1,13 @@
 package fr.ipme.coupe.model;
 
+import fr.ipme.coupe.core.AbstractMatch;
 import fr.ipme.coupe.core.ModelInterface;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="`match`")
-public class Match implements ModelInterface {
+public class Match extends AbstractMatch implements ModelInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

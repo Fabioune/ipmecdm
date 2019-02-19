@@ -10,8 +10,8 @@ public class AbstractPronosticEliminatoire {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
-    private boolean ateam;
-    private boolean bteam;
+    private boolean aTeam;
+    private boolean bTeam;
 
     public long getId() {
         return id;
@@ -22,18 +22,18 @@ public class AbstractPronosticEliminatoire {
     }
 
     public boolean isAteam() {
-        return ateam;
+        return aTeam;
     }
 
     public void setAteam(boolean ateam) {
-        this.ateam = ateam;
+        this.aTeam = ateam;
     }
 
     public boolean isBteam() {
-        return bteam;
+        return bTeam;
     }
 
     public void setBteam(boolean bteam) {
-        this.bteam = bteam;
+        this.bTeam = bteam;
     }
 }

@@ -36,6 +36,9 @@ public class Team implements ModelInterface {
      */
     private int defence;
 
+    private int pointGroupTeam;
+
+
     public long getId() {
         return id;
     }
@@ -74,6 +77,14 @@ public class Team implements ModelInterface {
 
     public void setDefence(int defence) {
         this.defence = defence;
+    }
+
+    public int getPointGroupTeam() {
+        return pointGroupTeam;
+    }
+
+    public void setPointGroupTeam(int pointGroupTeam) {
+        this.pointGroupTeam = pointGroupTeam;
     }
 
     public Team(){}

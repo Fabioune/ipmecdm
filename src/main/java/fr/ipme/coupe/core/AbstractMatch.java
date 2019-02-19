@@ -17,9 +17,9 @@ public abstract class AbstractMatch {
 
     private int currentTime;
 
-    private Match aScore;
+    private int aScore;
 
-    private Match bScore;
+    private int bScore;
 
     private Team aTeam;
 
@@ -49,19 +49,19 @@ public abstract class AbstractMatch {
         this.currentTime = currentTime;
     }
 
-    public Match getaScore() {
+    public int getaScore() {
         return aScore;
     }
 
-    public void setaScore(Match aScore) {
+    public void setaScore(int aScore) {
         this.aScore = aScore;
     }
 
-    public Match getbScore() {
+    public int getbScore() {
         return bScore;
     }
 
-    public void setbScore(Match bScore) {
+    public void setbScore(int bScore) {
         this.bScore = bScore;
     }
 
