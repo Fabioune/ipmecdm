@@ -58,4 +58,9 @@ public class ManagerController {
     {
         groupService.launchPool();
     }
+
+    public void launchPronostics()
+    {
+
+    }
 }

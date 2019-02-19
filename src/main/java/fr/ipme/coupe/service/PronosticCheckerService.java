@@ -46,8 +46,8 @@ public class PronosticCheckerService {
         for (int i = 0; i < userWithPro.size(); i++) {
             List<Pronostic> pronostic = pronosticRepository.findByUserAndMatch(userWithPro.get(i), match);
             for (int j = 0; j < pronostic.size(); j++) {
-                if ((pronostic.get(j).getbScore() > match.getaScore() && pronostic.get(j).getaScore() > match.getbScore())
-                || (pronostic.get(j).getbScore() < match.getaScore() && pronostic.get(j).getaScore() < match.getbScore())
+                if ((pronostic.get(j).getaScore() > match.getbScore() && pronostic.get(j).getaScore() > match.getbScore())
+                || (pronostic.get(j).getaScore() < match.getbScore() && pronostic.get(j).getaScore() < match.getbScore())
                 || (pronostic.get(j).getbScore() == match.getaScore() && pronostic.get(j).getaScore() == match.getbScore())) {
                     listFiltered.add(userWithPro.get(i));
                 }
@@ -65,8 +65,8 @@ public class PronosticCheckerService {
         for (int i = 0; i < userWithPro.size(); i++) {
             List<Pronostic> pronostic = pronosticRepository.findByUserAndMatch(userWithPro.get(i), match);
             for (int j = 0; j < pronostic.size(); j++) {
-                if ((pronostic.get(j).getbScore() > match.getaScore() && pronostic.get(j).getaScore() > match.getbScore())
-                || (pronostic.get(j).getbScore() < match.getaScore() && pronostic.get(j).getaScore() < match.getbScore())) {
+                if ((pronostic.get(j).getaScore() > match.getbScore() && pronostic.get(j).getaScore() > match.getbScore())
+                        || (pronostic.get(j).getaScore() < match.getbScore() && pronostic.get(j).getaScore() < match.getbScore())) {
                     listFiltered.add(userWithPro.get(i));
                 }
             }
