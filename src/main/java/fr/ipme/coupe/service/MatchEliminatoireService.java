@@ -23,7 +23,7 @@ public class MatchEliminatoireService extends MatchService{
 
     public void play(){
 
-        for (int i=0; i<=(this.match.getTime())+(int)(Math.random()*5); i++){
+        for (int i=0; i<=(90)+(int)(Math.random()*5); i++){
 
             if(Math.random()<0.5){
 

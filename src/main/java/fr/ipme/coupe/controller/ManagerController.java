@@ -1,6 +1,9 @@
 package fr.ipme.coupe.controller;
 
+import fr.ipme.coupe.model.Match;
 import fr.ipme.coupe.repository.*;
+import fr.ipme.coupe.service.GroupService;
+import fr.ipme.coupe.service.MatchPouleService;
 import fr.ipme.coupe.service.RandomGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,11 +31,13 @@ public class ManagerController {
 
     @Autowired
     private RandomGeneratorService randomGeneratorService;
+    @Autowired
+    private GroupService groupService;
 
     /**
      * nPoint to reset all app data
      */
-    @GetMapping(value="/reset")
+    @GetMapping("/reset")
     public void reset()
     {
         // Flush all users, pronostics and teams
@@ -46,5 +51,11 @@ public class ManagerController {
         // recreate basic set of users and one admin
         randomGeneratorService.generateRandomsUsers();
 
+    }
+
+    @GetMapping("/poules")
+    public void launchPoules()
+    {
+        groupService.launchPool();
     }
 }

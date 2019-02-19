@@ -17,7 +17,8 @@ public class GroupService {
     @Autowired
     GroupRepository groupRepository;
 
-
+    @Autowired
+    MatchPouleService matchPouleService;
 
     public void launchPool() {
 
@@ -34,8 +35,8 @@ public class GroupService {
                     match.setaTeam(teams.get(j));
                     match.setbTeam(teams.get(k));
 
-                    MatchPouleService matchPoupoule = new MatchPouleService(match);
-                    matchPoupoule.play();
+                    matchPouleService.setMatch(match);
+                    matchPouleService.play();
 
                 }
     
