@@ -10,8 +10,8 @@ abstract class AbstractPronostic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
-    private boolean team1;
-    private boolean team2;
+    private boolean ateam;
+    private boolean bteam;
 
     public long getId() {
         return id;
@@ -21,19 +21,19 @@ abstract class AbstractPronostic {
         this.id = id;
     }
 
-    public boolean isTeam1() {
-        return team1;
+    public boolean isAteam() {
+        return ateam;
     }
 
-    public void setTeam1(boolean team1) {
-        this.team1 = team1;
+    public void setAteam(boolean ateam) {
+        this.ateam = ateam;
     }
 
-    public boolean isTeam2() {
-        return team2;
+    public boolean isBteam() {
+        return bteam;
     }
 
-    public void setTeam2(boolean team2) {
-        this.team2 = team2;
+    public void setBteam(boolean bteam) {
+        this.bteam = bteam;
     }
 }
