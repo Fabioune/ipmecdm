@@ -1,13 +1,14 @@
 package fr.ipme.coupe.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fr.ipme.coupe.core.ModelInterface;
 
 import javax.persistence.*;
 
 @Entity
 @Table
 @JsonIgnoreProperties("hibernateLazyInitializer")
-public class Team {
+public class Team implements ModelInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,7 @@
 package fr.ipme.coupe.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fr.ipme.coupe.core.ModelInterface;
 
 
 import javax.persistence.*;
@@ -8,41 +9,43 @@ import javax.persistence.*;
 @Entity
 @Table
 @JsonIgnoreProperties("hibernateLazyInitializer")
-public class User {
+public class User implements ModelInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    protected long id;
 
     protected String name;
 
-    private int age;
+    protected int age;
 
-    private String email;
+    protected String email;
 
-    private String password;
+    protected String password;
 
-    private int accountLevel;
+    protected int accountLevel;
 
+    public int getAccountLevel() {
+        return accountLevel;
+    }
 
-    public User() {}
-
-
-    public long getId() {
-        return id;
+    public void setAccountLevel(int accountLevel) {
+        this.accountLevel = accountLevel;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name;}
 
     public int getAge() {
         return age;
@@ -68,24 +71,12 @@ public class User {
         this.password = password;
     }
 
-    public int getAccountLevel() {
-        return accountLevel;
-    }
-
-    public void setAccountLevel(int accountLevel) {
-        this.accountLevel = accountLevel;
-    }
-
-
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", accountLevel=" + accountLevel +
+                "name='" + name + '\'' +
                 '}';
     }
+    public User() {}
+
 }

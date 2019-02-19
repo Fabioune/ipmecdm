@@ -1,13 +1,14 @@
 package fr.ipme.coupe.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fr.ipme.coupe.core.ModelInterface;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="`groups`")
 @JsonIgnoreProperties("hibernateLazyInitializer")
-public class Group {
+public class Group implements ModelInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

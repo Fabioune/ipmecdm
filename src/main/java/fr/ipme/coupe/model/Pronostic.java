@@ -1,10 +1,12 @@
 package fr.ipme.coupe.model;
 
+import fr.ipme.coupe.core.ModelInterface;
+
 import javax.persistence.*;
 
 @Entity
 @Table
-public class Pronostic {
+public class Pronostic implements ModelInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
