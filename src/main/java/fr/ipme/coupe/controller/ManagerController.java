@@ -53,10 +53,22 @@ public class ManagerController {
 
     }
 
+    /**
+     * Launch "poules" match and generate all pronotics
+     */
     @GetMapping("/poules")
     public void launchPoules()
     {
-        groupService.launchPool();
+        groupService.launchPoule();
+    }
+
+    /**
+     * Launch "eliminations" match and generate all pronotics
+     */
+    @GetMapping("/round1")
+    public void launchEliminations()
+    {
+        groupService.launchPoule();
     }
 
 }

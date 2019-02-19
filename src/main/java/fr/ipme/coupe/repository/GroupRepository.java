@@ -12,4 +12,6 @@ public interface GroupRepository extends JpaRepository <Group, Long> {
     @Query ("SELECT t FROM Team t WHERE group_id = :id ")
     public List<Team> findTeamsByGroup(long id);
 
+    @Query ("SELECT t FROM Team t ORDER BY group_id, point_group_team")
+    public List<Team> getRankings();
 }

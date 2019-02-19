@@ -5,27 +5,33 @@ import fr.ipme.coupe.model.Pronostic;
 import fr.ipme.coupe.model.User;
 import fr.ipme.coupe.repository.PronosticRepository;
 import fr.ipme.coupe.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+@Service
 public class UserService {
-
-    protected UserRepository userRepository;
+    @Autowired
     protected PronosticRepository pronosticRepository;
 
-    public List<Pronostic> getAllPronosticsByUser(User user)
+    /**
+     * This function SHOULD get scoreA and scoreB
+     * But for test reasons, let just get random score
+     *
+     * @param user
+     * @param match
+     * @return Pronostic
+     */
+    public Pronostic generateRandomPronosticForMatch(User user, Match match)
     {
-        return pronosticRepository.findByUser(user);
-    }
+        Pronostic pronostic = new Pronostic();
+        pronostic.setUser(user);
+        pronostic.setMatch(match);
+        pronostic.setaScore((int) (Math.random() * 5));
+        pronostic.setbScore((int) (Math.random() * 5));
 
-    public List<Pronostic> getPronosticsByMatch(Match match)
-    {
-        return pronosticRepository.findByMatch(match);
-    }
+        pronosticRepository.save(pronostic);
 
-    public List<Pronostic> getPronosticsByUserAndMatch(User user, Match match)
-    {
-        return pronosticRepository.findByUserAndMatch(user, match);
+        return pronostic;
     }
-
 }
