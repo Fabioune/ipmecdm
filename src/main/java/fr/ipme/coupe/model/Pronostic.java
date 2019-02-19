@@ -29,75 +29,14 @@ public class Pronostic implements ModelInterface {
     @ManyToOne
     private User user;
 
-
-    /**
-     * First Team
-     */
     @ManyToOne
-    private Team aTeam;
-
-
-    /**
-     * Second Team
-     */
-    @ManyToOne
-    private Team bTeam;
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getaScore() {
-        return aScore;
-    }
-
-    public void setaScore(int aScore) {
-        this.aScore = aScore;
-    }
-
-    public int getbScore() {
-        return bScore;
-    }
-
-    public void setbScore(int bScore) {
-        this.bScore = bScore;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Team getaTeam() {
-        return aTeam;
-    }
-
-    public void setaTeam(Team aTeam) {
-        this.aTeam = aTeam;
-    }
-
-    public Team getbTeam() {
-        return bTeam;
-    }
-
-    public void setbTeam(Team bTeam) {
-        this.bTeam = bTeam;
-    }
-
-    public Pronostic(){}
+    private Match match;
 
     public long getId() {
         return id;
     }
 
+    @Override
     public void setId(long id) {
         this.id = id;
     }
@@ -126,19 +65,11 @@ public class Pronostic implements ModelInterface {
         this.user = user;
     }
 
-    public Team getaTeam() {
-        return aTeam;
+    public Match getMatch() {
+        return match;
     }
 
-    public void setaTeam(Team aTeam) {
-        this.aTeam = aTeam;
-    }
-
-    public Team getbTeam() {
-        return bTeam;
-    }
-
-    public void setbTeam(Team bTeam) {
-        this.bTeam = bTeam;
+    public void setMatch(Match match) {
+        this.match = match;
     }
 }
